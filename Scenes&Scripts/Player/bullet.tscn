@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgk54pley6lse"]
+
+[ext_resource type="Texture2D" uid="uid://di367q46vi68g" path="res://icon.svg" id="1_2w70y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73dcl"]
+size = Vector2(13, 38)
+
+[node name="Bullet" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+scale = Vector2(0.1, 0.3)
+texture = ExtResource("1_2w70y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_73dcl")
