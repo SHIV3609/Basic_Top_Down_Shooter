@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgk54pley6lse"]
+[gd_scene load_steps=4 format=3 uid="uid://cgk54pley6lse"]
 
 [ext_resource type="Texture2D" uid="uid://di367q46vi68g" path="res://icon.svg" id="1_2w70y"]
+[ext_resource type="Script" path="res://Scenes&Scripts/Player/bullet.gd" id="1_gwcvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73dcl"]
-size = Vector2(13, 38)
+size = Vector2(19, 8)
 
 [node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_gwcvg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 1, 1)
-scale = Vector2(0.1, 0.3)
+rotation = -1.57079
+scale = Vector2(0.07, 0.15)
 texture = ExtResource("1_2w70y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_73dcl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

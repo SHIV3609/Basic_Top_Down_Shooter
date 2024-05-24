@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://desd0cml6hhyb"]
+[gd_scene load_steps=3 format=3 uid="uid://desd0cml6hhyb"]
 
 [ext_resource type="PackedScene" uid="uid://dm6wpc5wwkkpy" path="res://Scenes&Scripts/Player/player.tscn" id="1_jelxo"]
+[ext_resource type="Script" path="res://Scenes&Scripts/main.gd" id="1_yhmrg"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_yhmrg")
 
 [node name="Player" parent="." instance=ExtResource("1_jelxo")]
 position = Vector2(615, 321)
+
+[node name="Bullets" type="Node2D" parent="."]

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: int = 200
+@onready var bullet_spawner = $BulletSpawner
 
 var direction = Vector2.ZERO
 
